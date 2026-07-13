@@ -1,5 +1,5 @@
 //
-//  BordedCardView.swift
+//  BorderedCardView.swift
 //  CompanySnapShot
 //
 //  Created by Gianluca Pascarella on 09/07/2026.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
- private struct BordedCardView: ViewModifier {
+private struct BorderedCardView: ViewModifier {
     let cornerRadius: CGFloat
     func body(content: Content) -> some View {
         content
@@ -22,6 +22,6 @@ import SwiftUI
 
  extension View {
     func borderedCard(cornerRadius: CGFloat = 16) -> some View {
-        modifier(BordedCardView(cornerRadius: cornerRadius))
+        modifier(BorderedCardView(cornerRadius: cornerRadius))
     }
 }
