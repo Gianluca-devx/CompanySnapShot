@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @State private var path = NavigationPath()
+    @State private var viewModel: any HomeViewModelProtocol = MockHomeViewModel()
+    
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
-                LatestSnapshotCardView()
+                if let snapshot = viewModel.latestSnapshot {
+                    LatestSnapshotCardView(mockdata: snapshot)
+                } else {
+                    
+                }
+                HistorySnapShotCardView()
             }
             .navigationTitle("SnapAI")
         }
